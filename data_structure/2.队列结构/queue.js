@@ -1,35 +1,35 @@
 // 创建队列类
 class Queue {
-  #items = [];
+  items = [];
   // 在队列中添加元素
   enqueue(element) {
-    this.#items.push(element);
+    this.items.push(element);
   }
 
   // 从队列中取出第一个元素
   dequeue() {
-    return this.#items.shift();
+    return this.items.shift();
   }
 
   // 判断队列书否为空
 
   isEmpty() {
-    return this.#items.length === 0;
+    return this.items.length === 0;
   }
 
   // 查看队列的第一个元素
   front() {
-    return this.#items[0];
+    return this.items[0];
   }
 
   // 队列的长度
   size() {
-    return this.#items.length;
+    return this.items.length;
   }
 
   toString() {
-    return this.#items.reduce((res, item) => {
-      return `${res} ${item}`;
+    return this.items.reduce((res, item) => {
+      return `${res} ${JSON.stringify(item)}`;
     }, "");
   }
 }
@@ -60,4 +60,5 @@ function passGame(nameList, num) {
   return nameList.indexOf(end);
 }
 
-console.log(passGame(names, 3));
+// console.log(passGame(names, 3));
+exports.Queue = Queue;
